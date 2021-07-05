@@ -3,25 +3,32 @@
 
 <h2>Special Pizzas for Special Cats:</h2>
 
-<nav>
+{{!-- <nav>
     <ul>
         <li>
-            <a href="/specialtyPizzas">Carnivore Carbonara</a>
+            <a href="/specialtyPizzas?id={{this.id}}">Carnivore Carbonara</a>
         </li>
         <li>
-            <a href="/specialtyPizzas">Grass Gremlin Gourmet</a>
+            <a href="/specialtyPizzas/2">Grass Gremlin Gourmet</a>
         </li>
         <li>
-            <a href="/specialtyPizzas">Floppy Fish Delight</a>
+            <a href="/specialtyPizzas/3">Floppy Fish Delight</a>
         </li>
     </ul>
-</nav>
+</nav> --}}
+<ul>
+    {{#each specialtyPizzas}}
+        <li>
+            <a href="/specialtyPizzas?id={{this.id}}">{{this.name}}</a>
+        </li>
+    {{/each}}
+</ul>
 
 <h3>Finicky Feline's Fancy Creations:</h3>
 <a href="/customize" class="customizeButton">Build Your Own</a>
 
 
-<h3>Headboops or Carpet Pukes</h3>
+<h3>Headboops or Carpet Pukes:</h3>
 <a href="/review">Leave your review here</a><br>
 
 <img src="#" alt="pizza image">
