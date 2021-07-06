@@ -1,11 +1,10 @@
 <link rel="stylesheet" href="/styles.css">
-<h1>Thanks for the review!</h1>
+<h1>Thanks for the review! (Maybe).</h1>
 
 {{#if Review}}
-    <h3>Your name: {{this.name}}</h3>
-    <p>Your comments: {{this?.comments}}</p>
-    <p>Your rating: {{this.value}}</p>
-
+    <h3>Your name: {{Review.name}}</h3>
+    <p>Your comments: {{Review.comments}}</p>
+    <p>Your rating: {{Review.rating}}</p>
 
 {{/if}}
 <a href="/">Home</a>

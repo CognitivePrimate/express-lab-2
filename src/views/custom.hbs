@@ -1,0 +1,27 @@
+<link rel="stylesheet" href="/custom-styles.css">
+<link rel="stylesheet" href="/styles.css">
+
+<h1>Finicky Feline's Fancy Creations</h1>
+<h2>Build your own pizza:</h2>
+
+<form method="POST" action="/customConfirmation">
+    <label for="sizeInput">Size:</label>
+    <select name="sizeInput" id="sizeInput" placeholder="Choose Size">
+        <option value="small">Small</option>
+        <option value="medium">Medium</option>
+        <option value="large">Large</option>
+    </select>
+    <h3>Choose your toppings:</h3>
+    <div class="toppingsContainer">
+        {{#each topping}}
+            <label for={{topping}}>{{topping.name}}</label>
+            <input type="checkbox" id={{topping}} name={{topping}}
+        {{/each}}
+    </div>
+
+
+</form>
+
+
+
+<a href="/">Home</a>

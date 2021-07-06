@@ -1,4 +1,5 @@
 import express from "express";
+import {toppings} from "./toppings";
 
 const routes = express.Router();
 
@@ -25,8 +26,6 @@ let specialtyPizzas: Pizza[] = [
     },
 ]
 
-// pizzas array
-let cart: Pizza[] = [];
 
 // INTERFACES
 // pizza object
@@ -37,10 +36,12 @@ interface Pizza {
     id: number
 }
 
+
+
 // review form
 interface Review {
     name: string,
-    comments?: string,
+    comments: string,
     rating: string
 }
 
@@ -72,18 +73,31 @@ routes.get("/review", (req, res) => {
     res.render("review");
 })
 
-// "review/confirmation?"
-routes.post("/confirmation", (req, res) => {
-    const name: string = req.body.name ? String(req.body.name) : "";
-    const comments: string = req.body?.comments ? String(req.body?.comments) : "";
-    const rating: number = req.body.value ? Number(req.body.value) : 0;
+routes.get("/custom", (req, res) => {
+    console.log(toppings);
+    res.render("custom", {
+        topping: toppings
+    });
+})
 
-    const newReview: Review = {
+// "review/confirmation?"
+routes.post("/reviewConfirmation", (req, res) => {
+    console.log(req.body);
+    const name: string = req.body.name ? String(req.body.name) : "";
+    const comments: string = req.body.comments ? String(req.body.comments) : "";
+    const rating: string = req.body.rating ? String(req.body.rating) : "";
+
+    const results: Review = {
         name: name,
         comments: comments,
         rating: rating
-
     }
+
+    res.render("reviewConfirmation", {
+        Review: results
+    });
+
+
 })
 
 
