@@ -14,8 +14,8 @@
     <h3>Choose your toppings:</h3>
     <div class="toppingsContainer">
         {{#each topping}}
-            <label for={{topping}}>{{topping.name}}</label>
-            <input type="checkbox" id={{topping}} name={{topping}}
+            <label for={{this.name}}>{{this.name}}</label>
+            <input type="checkbox" id={{topping}} name={{topping}}>
         {{/each}}
     </div>
 
