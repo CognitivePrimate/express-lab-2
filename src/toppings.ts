@@ -5,21 +5,21 @@
 // toppings array
 const toppingChoices: String[] = [
 
-    " Fishtank Flounder",
+    " Fishtank Flounder ",
     " Braised Bunny ",    
     " Bowl-raised Goldfish ",
-    " Groundhog Sausage",
-    " Yard Bird",    
-    " Backyard Koi",
-    " Sewer Rat",
-    " Shredded Tuna",
-    " Stolen Sandwich Bread",
-    " Yogurt",
-    " Too-slow Fly",
-    " Floor Spider",
-    " Grilled Possum Tail",
-    " Catnip",
-    " Extra Cheese"
+    " Groundhog Sausage ",
+    " Yard Bird ",    
+    " Backyard Koi ",
+    " Sewer Rat ",
+    " Shredded Tuna ",
+    " Stolen Sandwich Bread ",
+    " Yogurt ",
+    " Too-slow Fly ",
+    " Floor Spider ",
+    " Grilled Possum Tail ",
+    " Catnip ",
+    " Extra Cheese "
    
 ];
 

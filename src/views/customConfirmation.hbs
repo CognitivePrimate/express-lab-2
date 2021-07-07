@@ -1,18 +1,18 @@
 <link rel="stylesheet" href="/customConfirmation-styles.css">
-<link rel="stylesheet" href="/styles.css">
-
+<link rel="stylesheet" href="/master-styles.css">
 <h1>Your Pizza</h1>
 
 {{#if Pizza}}
 <h3>Size: {{Pizza.size}}</h3>
-<h2>Toppings:</h2>
+<h3>Toppings:</h3>
     <ul>
         {{#each Pizza.toppings}}
             <li>{{this}}</li>
         {{/each}}
     </ul>
-<h4>Gluten free: {{Pizza.isGlutenFree}}</h4>
-<h5>Special Instuctions: {{Pizza.specialInstructions}}</h5>
+<h3>Gluten free: {{Pizza.isGlutenFree}}</h3>
+<h4>Special Instuctions:</h4>
+<textarea id="instructions" name="instructions" rows="10" cols="33" placeholder="Nothng to see here, human.">{{Pizza.specialInstructions}}</textarea>
 {{/if}}
 <h3>Price: {{Pizza.price}}</h3>
 <a href="/custom"><span>Build another</span></a>|<a href="/"><span>Back Home</span></a>

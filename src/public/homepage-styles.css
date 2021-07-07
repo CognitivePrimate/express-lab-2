@@ -1,0 +1,40 @@
+.homecat {
+    height: 200px;
+    width:auto;
+    position: absolute;
+    top: 175px;
+    left: 300px;
+}
+
+.pizzabox {
+    height: 300px;
+    width: auto;
+    position: absolute;
+    bottom: 55px;
+    left: 350px;
+    transform: scaleX(-1);
+}
+
+
+a {
+    text-decoration: none;
+}
+
+/* .specialty-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 65px;
+    width: 200px;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px 1px rgba(54, 32, 7);
+    background: rgba(126, 75, 17, .5);
+    margin: 8px 0;
+    text-align: center;
+    transition: .2s;
+}
+
+.specialty-card:hover {
+    transform: scale(1.03);
+} */
+

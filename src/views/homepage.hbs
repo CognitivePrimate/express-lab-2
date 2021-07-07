@@ -1,34 +1,40 @@
-<link rel="stylesheet" href="/styles.css">
+{{!-- heading fonts here --}}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Otomanopee+One&display=swap" rel="stylesheet">
+{{!-- normal text font below --}}
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&family=Otomanopee+One&display=swap" rel="stylesheet">
+
+
+{{!-- stylesheeets CSS --}}
+<link rel="stylesheet" href="/master-styles.css">
+<link rel="stylesheet" href="/homepage-styles.css">
+
 <h1>Chonky Cats Pizzaria</h1>
 
 <h2>Special Pizzas for Special Cats:</h2>
 
-{{!-- <nav>
-    <ul>
-        <li>
-            <a href="/specialtyPizzas?id={{this.id}}">Carnivore Carbonara</a>
-        </li>
-        <li>
-            <a href="/specialtyPizzas/2">Grass Gremlin Gourmet</a>
-        </li>
-        <li>
-            <a href="/specialtyPizzas/3">Floppy Fish Delight</a>
-        </li>
-    </ul>
-</nav> --}}
 <ul>
     {{#each specialtyPizzas}}
-        <li>
-            <a href="/specialtyPizzas?name={{this.name}}">{{this.name}}</a>
-        </li>
+        
+        <a href="/specialtyPizzas?name={{this.name}}">
+            <div class="specialty-card">{{this.name}}</div>
+        </a>
+    
     {{/each}}
 </ul>
 
 <h3>Finicky Feline's Fancy Creations:</h3>
-<a href="/custom" class="customizeButton">Build Your Own</a>
-
+<ul>
+    <a href="/custom" class="customizeButton"><div class="specialty-card">Build Your Own</div></a>
+</ul>
 
 <h3>Headboops or Carpet Pukes:</h3>
-<a href="/review">Leave your review here</a><br>
+<ul>
+    <a href="/review"><div class="specialty-card">Leave your review here</div></a>
+</ul>
 
-<img src="#" alt="pizza image">
+<img class="homecat" src="/pizza-cat-pepperoni.png" alt="pizza image">
+<img class="pizzabox" src="/pizza-box.png" alt="pizza box">
+
+<footer>Made with indifference. For cats, by cats.</footer>

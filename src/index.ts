@@ -6,7 +6,6 @@ import nodemon from "nodemon";
 
 // local imports
 import routes from "./routes";
-
 // create instance of express
 const app = express();
 // enable ability to parse body of requests
@@ -31,3 +30,4 @@ app.use("/", routes);
 app.listen(port, () => {
     console.log(`Server running on ${port}`);
 })
+

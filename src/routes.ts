@@ -88,30 +88,21 @@ routes.post("/customConfirmation", (req, res) => {
     
     const size: string = req.body.sizeInput ? String(req.body.sizeInput) : "";
     const specialInstructions: string = req.body.instructions ? String(req.body.instructions) : ""
-    let chosenToppings: string[] = req.body.toppings ? Object(req.body.toppings) : "None Selected";
-    console.log(req.body);
-    console.log(`Topping Choices: ${toppingChoices}`);
-    console.log(`req.body.toppings ${req.body.toppings}`);
-    // chosenToppings.push(req.body.topping);
-    console.log(`Chosen Toppings: ${chosenToppings}`);
+    let chosenToppings: string[] = req.body.toppings ? Object(req.body.toppings) : "";
     const isGlutenFree: string = req.body.gluten ? "Yes" : "No";
+    
     // pricing configuration variables
     let sizePrice: number = size === "small" ? 7 : size === "medium" ? 10 : 12;
-    // let smallToppingsPrice: number = .50 * chosenToppings.length;
-    console.log(`sizeprice: ${sizePrice}`)
-    let toppingsMultiplyer: number = sizePrice === 7 ? Number((.50 * chosenToppings.length).toFixed(2)) : Number((sizePrice === 10) ? Number((1 * chosenToppings.length).toFixed(2)) : Number((1.25 * chosenToppings.length).toFixed(2)));
-    console.log(`toppingsmultiplyer: ${toppingsMultiplyer}`);
-    console.log(`chosentoppings: ${chosenToppings}`);
-    console.log(`chosentoppings.length: ${chosenToppings.length}`);
-    
-
+    let toppingsMultiplyer: number = sizePrice === 7 ? Number((.50 * chosenToppings.length)) : sizePrice === 10 ? Number((1 * chosenToppings.length)) : Number((1.25 * chosenToppings.length));
+ 
     // Price Formula based on above variables
-    let price: number = sizePrice + toppingsMultiplyer;
+    let price: number = Number(sizePrice.toFixed(2)) + Number(toppingsMultiplyer.toFixed(2));
     isGlutenFree == "Yes" ? price += 2 : price;
+   
     const results: Pizza = {
         // name?: "name",
         size: size,
-        price: price,
+        price: Number(price.toFixed(2)),
         toppings: chosenToppings,
         isGlutenFree: isGlutenFree,
         specialInstructions: specialInstructions

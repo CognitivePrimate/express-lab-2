@@ -1,11 +1,18 @@
+{{!-- heading fonts here --}}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Otomanopee+One&display=swap" rel="stylesheet">
+{{!-- normal text font below --}}
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&family=Otomanopee+One&display=swap" rel="stylesheet">
+{{!-- css stylesheets --}}
+<link rel="stylesheet" href="/master-styles.css">
 <link rel="stylesheet" href="/custom-styles.css">
-<link rel="stylesheet" href="/styles.css">
 
 <h1>Finicky Feline's Fancy Creations</h1>
-<h2>Build your own pizza:</h2>
+<h2>Build your own pizza</h2>
 
 <form method="POST" action="/customConfirmation">
-    <label for="sizeInput">Size:</label>
+    <label class="size" for="sizeInput">Size:</label>
     <select name="sizeInput" id="sizeInput" placeholder="Choose Size">
         <option value="small">Small</option>
         <option value="medium">Medium</option>
@@ -14,8 +21,10 @@
     <h3>Choose your toppings:</h3>
     <div class="toppingsContainer">
         {{#each topping}}
-            <label for="{{this}}">{{this}}</label>
-            <input type="checkbox" id="{{this}}" name="toppings" value={{this}}>
+            <div class="check-and-label">
+                <input type="checkbox" id="{{this}}" name="toppings" value="{{this}}">
+                <label for={{this}}>{{this}}</label>
+            </div>    
         {{/each}}
     </div>
     <label for="instructions">Special Instructions:</label><br>
@@ -27,4 +36,6 @@
 
 
 
-<a href="/">Home</a>
+<a href="/"><div class="specialty-card">Home</div></a>
+
+<footer>Made with indifference. For cats, by cats.</footer>
