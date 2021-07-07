@@ -2,7 +2,9 @@
 {{#if pizza}}
 <h1>Special Pizzas for Special Cats</h1>
 <h2>{{pizza.name}}</h2>
-<p>{{pizza.toppings}}</p>
+{{#each pizza.toppings}}
+<p>{{this.name}}</p>
+{{/each}}
 <p class="price">${{pizza.price}}</p>
 {{/if}}
 

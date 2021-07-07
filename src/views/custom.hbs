@@ -14,12 +14,16 @@
     <h3>Choose your toppings:</h3>
     <div class="toppingsContainer">
         {{#each topping}}
-            <label for={{this.name}}>{{this.name}}</label>
-            <input type="checkbox" id={{topping}} name={{topping}}>
+            <p>{{topping}}</p>
+            <label for="toppings">{{this.name}}</label>
+            <input type="checkbox" id="toppings" name="toppings" value={{toppings}}>
         {{/each}}
     </div>
-
-
+    <label for="instructions">Special Instructions:</label><br>
+    <textarea id="instructions" name="instructions" rows="10" cols="33" placeholder="Cough up special instructions here."></textarea><br>
+    <input type="checkbox" name="gluten" id="gluten">
+    <label for="gluten">Gluten Free</label>
+    <button type="submit">Place Order</button>
 </form>
 
 
