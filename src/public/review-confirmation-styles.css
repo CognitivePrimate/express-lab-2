@@ -1,0 +1,33 @@
+h1 {
+    margin-bottom: 15px;;
+}
+.reviewbox {
+    display: flex;
+    flex-direction: column;
+}
+
+h3 {
+    margin: 5px 0px 0px 0px;
+}
+
+textarea {
+    border: 1px solid #362007;
+    border-radius: 5px;    
+    background: #eedcbf;
+    margin-top: 3px;
+    width: 380px;
+    height: 200px;
+}
+
+p {
+    font-size: 1.25rem;
+    margin: 0 0 2px 8px;
+}
+
+img {
+    position: absolute;
+    left: 20px;
+    bottom: 75px;
+    height: 175px;
+    width: auto;
+}

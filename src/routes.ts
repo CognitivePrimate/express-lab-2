@@ -9,21 +9,21 @@ let specialtyPizzas: Pizza[] = [
     {
         name: "Carnivore Carbonara",
         size: "large",
-        price: 19,
+        price: 19.00,
         toppings: ["Pepperoni", " Braised Mouse", " Yard Bird", " Groundhog Sausage", " Braised Bunny"],
         isGlutenFree: "No"
     },
     {
         name: "Grass Gremlin Gourmet",
         size: "large",
-        price: 13,
+        price: 13.00,
         toppings: ["Fresh-cut Grass", " Tall Grass", " Grass Clippings", " Regurgitable White Sauce"],
         isGlutenFree: "No"
     },
     {
         name: "Floppy Fish Delight",
         size: "large",
-        price: 23,
+        price: 23.00,
         toppings: ["Fishtank Flouder", " Grouper", " Bowl-raised Goldfish", " Backyard Koi", " Shredded Tuna"],
         isGlutenFree: "No"
     },
@@ -98,9 +98,9 @@ routes.post("/customConfirmation", (req, res) => {
     // Price Formula based on above variables
     let price: number = Number(sizePrice.toFixed(2)) + Number(toppingsMultiplyer.toFixed(2));
     isGlutenFree == "Yes" ? price += 2 : price;
-   
+    chosenToppings.includes(" Catnip ($2.00) ") ? price+= 1.50 : price;
+    chosenToppings.includes(" Extra Cheese ($2.00) ") ? price+= 1.50 : price;
     const results: Pizza = {
-        // name?: "name",
         size: size,
         price: Number(price.toFixed(2)),
         toppings: chosenToppings,

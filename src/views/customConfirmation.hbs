@@ -1,9 +1,20 @@
-<link rel="stylesheet" href="/customConfirmation-styles.css">
+{{!-- heading fonts here --}}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Otomanopee+One&display=swap" rel="stylesheet">
+{{!-- normal text font below --}}
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&family=Otomanopee+One&display=swap" rel="stylesheet">
+{{!-- CSS stylesheets --}}
 <link rel="stylesheet" href="/master-styles.css">
+<link rel="stylesheet" href="/customConfirmation-styles.css">
+
 <h1>Your Pizza</h1>
 
 {{#if Pizza}}
-<h3>Size: {{Pizza.size}}</h3>
+<div class="size">
+    <h2>Size:</h2> 
+    <h3 class="sizeHead">{{Pizza.size}}</h3>
+</div>
 <h3>Toppings:</h3>
     <ul>
         {{#each Pizza.toppings}}
@@ -15,12 +26,11 @@
 <textarea id="instructions" name="instructions" rows="10" cols="33" placeholder="Nothng to see here, human.">{{Pizza.specialInstructions}}</textarea>
 {{/if}}
 <h3>Price: {{Pizza.price}}</h3>
-<a href="/custom"><span>Build another</span></a>|<a href="/"><span>Back Home</span></a>
+<div class="navbox">
+    <a href="/custom"><div class="specialty-card">Build another</div></a>
+    <a href="/"><div class="specialty-card">Back Home</div></a>
+</div>
+
+<img src="/pizza-cat-on-back.png">
 
 
-
-
-
-
-
-<a href="/">Home</a>

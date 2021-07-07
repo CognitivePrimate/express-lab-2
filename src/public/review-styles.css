@@ -1,0 +1,71 @@
+h1 {
+    font-size: 2.5rem;
+}
+
+#name {
+    border: 1px solid #362007;
+    border-radius: 5px;    
+    background: #eedcbf;
+    margin-bottom: 3px;
+    width: 325px;
+}
+
+#name::placeholder {
+    color: rgba(126, 75, 17, .9);
+}
+
+textarea {
+    border: 1px solid #362007;
+    border-radius: 5px;    
+    background: #eedcbf;
+    margin-top: 3px;
+    width: 380px;
+    height: 420px;
+}
+
+textarea::placeholder {
+    color: rgba(126, 75, 17, .9);
+}
+
+.namelabel {
+    font-family: 'Otomanopee One', 'sans-serif';
+}
+
+p {
+    margin-top: 30px;
+    font-size: 1.5rem;
+}
+
+button {
+    border: none;
+    border-radius: 5px;
+    background: rgba(126, 75, 17, .5);
+    color: #eedcbf;
+    box-shadow: 2px 2px 5px 1px rgba(54, 32, 7);
+    margin: 8px 5px;
+    padding: 0;
+    transition: .3s;
+    height: 65px;
+    width: 200px;
+}
+
+button:hover {
+    transform: scale(1.02);
+}
+
+.buttonBox  {
+    display: flex;
+    align-content: center;
+}
+
+.specialty-card {
+    margin: 8px 5px;
+}
+
+img {
+    position:absolute;
+    top: 375px;
+    left: 400px;
+    height: 225px;
+    width: auto;
+}

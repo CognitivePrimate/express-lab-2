@@ -18,8 +18,8 @@ const toppingChoices: String[] = [
     " Too-slow Fly ",
     " Floor Spider ",
     " Grilled Possum Tail ",
-    " Catnip ",
-    " Extra Cheese "
+    " Catnip ($2.00) ",
+    " Extra Cheese ($2.00) "
    
 ];
 

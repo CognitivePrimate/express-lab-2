@@ -7,10 +7,18 @@ h4 {
     font-size: 1.25rem;
 }
 
-img {
+.cat {
     height: 400px;
     width: auto;
     position: absolute;
-    bottom: 20px;
-    left: 300px;
+    bottom: 375px;
+    left: 250px;
+}
+
+.pizza {
+    position: absolute;
+    bottom: -50px;
+    left: 150px;
+    height: 450px;
+    transform: rotate(.10turn);
 }

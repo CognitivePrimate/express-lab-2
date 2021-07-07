@@ -1,0 +1,39 @@
+
+h1 {
+    margin: 20px 0px 10px 0px;
+
+}
+.size {
+    display: flex;
+    align-items: center;
+}
+
+.sizeHead {
+    align-self: flex-end;
+    margin-left: 5px;
+    text-transform: capitalize;
+}
+
+textarea {
+    border: 1px solid #362007;
+    border-radius: 5px;    
+    background: #eedcbf;
+}
+
+.navbox {
+    display: flex;
+
+}
+
+.specialty-card {
+    margin: 0px 3px 0px 3px
+}
+
+img {
+    position: absolute;
+    transform: rotate(0.08turn);
+    height: 375px;
+    width: auto;
+    top: 100px;
+    left: 380px;
+}

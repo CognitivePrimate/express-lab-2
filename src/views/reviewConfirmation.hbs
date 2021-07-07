@@ -1,10 +1,40 @@
+{{!-- heading fonts here --}}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Otomanopee+One&display=swap" rel="stylesheet">
+{{!-- normal text font below --}}
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&family=Otomanopee+One&display=swap" rel="stylesheet">
+
+{{!-- CSS stylesheets --}}
 <link rel="stylesheet" href="/master-styles.css">
+<link rel="stylesheet" href="/review-confirmation-styles.css">
+
+
 <h1>Thanks for the review! (Maybe).</h1>
 
 {{#if Review}}
-    <h3>Your name: {{Review.name}}</h3>
-    <p>Your comments: {{Review.comments}}</p>
-    <p>Your rating: {{Review.rating}}</p>
-
+    <div class="reviewbox">
+        <h3>Your name:</h3> 
+        <p>{{Review.name}}</p>
+    </div>
+    <div class="reviewbox">   
+        <h3>Your comments:</h3> 
+        <textarea>{{Review.comments}}</textarea>
+    </div>
+    <div class="reviewbox">  
+        <h3>Your rating:</h3> 
+        <p>{{Review.rating}}</p>
+    </div>
 {{/if}}
-<a href="/">Home</a>
+<a href="/"><div class="specialty-card">Home</div></a>
+
+<img src="/cat-in-box.png">
+
+
+
+
+
+
+
+
+<footer>Made with indifference. For cats, by cats.</footer>

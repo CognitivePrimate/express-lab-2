@@ -39,11 +39,42 @@ select, option {
     border-radius: 5px;
 }
 
-.instructions-label {
+.instructions {
     font-family: 'Otomanopee One', 'sans-serif';
     font-size: 1.25rem;
     margin: 5px;
 }
+
+textarea {
+    border: 1px solid #362007;
+    border-radius: 5px;   
+    background: #eedcbf; 
+}
+
+textarea::placeholder {
+    color: rgba(126, 75, 17, .9);
+}
+
+button {
+    border: none;
+    border-radius: 5px;
+    background: rgba(126, 75, 17, .5);
+    color: #eedcbf;
+    box-shadow: 2px 2px 5px 1px rgba(54, 32, 7);
+    margin: 5px 5px;
+    transition: .3s;
+}
+
+button:hover {
+    transform: scale(1.02);
+}
+
+img {
+    position: absolute;
+    bottom: 100px;
+    left: 450px;
+}
+
 
 
 
