@@ -5,9 +5,17 @@
 
 {{#if Pizza}}
 <h3>Size: {{Pizza.size}}</h3>
-
-
+<h2>Toppings:</h2>
+    <ul>
+        {{#each Pizza.toppings}}
+            <li>{{this}}</li>
+        {{/each}}
+    </ul>
+<h4>Gluten free: {{Pizza.isGlutenFree}}</h4>
+<h5>Special Instuctions: {{Pizza.specialInstructions}}</h5>
 {{/if}}
+<h3>Price: {{Pizza.price}}</h3>
+<a href="/custom"><span>Build another</span></a>|<a href="/"><span>Back Home</span></a>
 
 
 

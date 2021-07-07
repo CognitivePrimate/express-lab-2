@@ -1,5 +1,5 @@
 import express from "express";
-import {Topping, toppingChoices} from "./toppings";
+import toppingChoices from "./toppings";
 
 const routes = express.Router();
 
@@ -10,21 +10,21 @@ let specialtyPizzas: Pizza[] = [
         name: "Carnivore Carbonara",
         size: "large",
         price: 19,
-        toppings: [{name: "Pepperoni", price: 0}, {name: " Braised Mouse", price: 0}, {name: " Yard Bird", price: 0}, {name: " Groundhog Sausage", price: 0}, {name: " Braised Bunny", price: 0}],
+        toppings: ["Pepperoni", " Braised Mouse", " Yard Bird", " Groundhog Sausage", " Braised Bunny"],
         isGlutenFree: "No"
     },
     {
         name: "Grass Gremlin Gourmet",
         size: "large",
         price: 13,
-        toppings: [{name: "Fresh-cut Grass", price: 0}, {name: " Tall Grass", price: 0}, {name: " Grass Clippings", price: 0}, {name: " Regurgitable White Sauce", price:0}],
+        toppings: ["Fresh-cut Grass", " Tall Grass", " Grass Clippings", " Regurgitable White Sauce"],
         isGlutenFree: "No"
     },
     {
         name: "Floppy Fish Delight",
         size: "large",
         price: 23,
-        toppings: [{name: "Fishtank Flouder", price: 0}, {name: " Grouper", price: 0}, {name: " Bowl-raised Goldfish", price: 0}, {name: " Backyard Koi", price: 0}, {name: " Shredded Tuna", price: 0}],
+        toppings: ["Fishtank Flouder", " Grouper", " Bowl-raised Goldfish", " Backyard Koi", " Shredded Tuna"],
         isGlutenFree: "No"
     },
 ]
@@ -36,9 +36,9 @@ interface Pizza {
     name?: string,
     size: string,
     price: number,
-    toppings: Topping[],
+    toppings: string[],
     isGlutenFree: string,
-    specialInstructions?: boolean
+    specialInstructions?: string
 }
 
 
@@ -49,9 +49,6 @@ interface Review {
     comments: string,
     rating: string
 }
-
-// track pizza IDs as added to cart
-let nextId: number = 4;
 
 // ROUTES
 // get
@@ -88,27 +85,36 @@ routes.get("/custom", (req, res) => {
 // renders new page based on submit action of custom pizza building
 routes.post("/customConfirmation", (req, res) => {
     // pizza interface variables
+    
     const size: string = req.body.sizeInput ? String(req.body.sizeInput) : "";
-    const instructions: string = req.body.instructions ? String(req.body.instructions) : ""
-    const chosenToppings: any = req.body.toppings ? String(req.body.toppings) : [];
+    const specialInstructions: string = req.body.instructions ? String(req.body.instructions) : ""
+    let chosenToppings: string[] = req.body.toppings ? Object(req.body.toppings) : "None Selected";
     console.log(req.body);
+    console.log(`Topping Choices: ${toppingChoices}`);
     console.log(`req.body.toppings ${req.body.toppings}`);
     // chosenToppings.push(req.body.topping);
     console.log(`Chosen Toppings: ${chosenToppings}`);
-    const isGlutenFree: string = req.body.gluten ? "yes" : "no"
+    const isGlutenFree: string = req.body.gluten ? "Yes" : "No";
     // pricing configuration variables
     let sizePrice: number = size === "small" ? 7 : size === "medium" ? 10 : 12;
+    // let smallToppingsPrice: number = .50 * chosenToppings.length;
     console.log(`sizeprice: ${sizePrice}`)
-    let toppingsMultiplyer: any = sizePrice === 7 ? (.50 * chosenToppings.length).toFixed(2) : sizePrice === 10 ? (1 * chosenToppings.length).toFixed(2) : (1.25 * chosenToppings.length).toFixed(2)
-    // console.log(`toppingsmultiplyer: ${toppingsMultiplyer}`);
+    let toppingsMultiplyer: number = sizePrice === 7 ? Number((.50 * chosenToppings.length).toFixed(2)) : Number((sizePrice === 10) ? Number((1 * chosenToppings.length).toFixed(2)) : Number((1.25 * chosenToppings.length).toFixed(2)));
+    console.log(`toppingsmultiplyer: ${toppingsMultiplyer}`);
+    console.log(`chosentoppings: ${chosenToppings}`);
+    console.log(`chosentoppings.length: ${chosenToppings.length}`);
+    
+
     // Price Formula based on above variables
-    const price: number = sizePrice + toppingsMultiplyer;
+    let price: number = sizePrice + toppingsMultiplyer;
+    isGlutenFree == "Yes" ? price += 2 : price;
     const results: Pizza = {
         // name?: "name",
         size: size,
         price: price,
         toppings: chosenToppings,
         isGlutenFree: isGlutenFree,
+        specialInstructions: specialInstructions
     }
     console.log(results);
 
